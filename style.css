@@ -364,6 +364,7 @@ header {
   align-items: center;
   text-align: center;
   border: 1px solid var(--border-color);
+  height: 100%;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
@@ -383,9 +384,10 @@ header {
 .cert-card h4 {
   margin-bottom: 1rem;
   font-size: 1rem;
-  min-height: 2.5rem;
+  min-height: 2.8rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .cert-card img {
@@ -396,6 +398,7 @@ header {
   margin-bottom: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin-top: auto;
 }
 
 .cert-card img:hover {
@@ -405,6 +408,8 @@ header {
 .cert-btn {
   font-size: 0.85rem;
   padding: 0.4rem 0.8rem;
+  margin-top: 0.5rem;
+  width: 100%;
 }
 
 .badge {
