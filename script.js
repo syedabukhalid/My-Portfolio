@@ -549,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Helper function to update logos depending on active theme
   const updateLogosForTheme = (isLight) => {
-    // Select images by their src attributes
+    // Certifications Section Logos
     const oracleLogo = document.querySelector('img[src*="Oracle_d_logo"], img[src*="Oracle_l_logo"]');
     const anthropicLogo = document.querySelector('img[src*="Anthropic_d_logo"], img[src*="Anthropic_l_logo"]');
     const ciscoLogo = document.querySelector('img[src*="Cisco_logo"], img[src*="Cisco_l_logo"]');
@@ -563,6 +563,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ciscoLogo) {
       ciscoLogo.src = isLight ? 'Logos/Cisco_l_logo.png' : 'Logos/Cisco_logo.webp';
     }
+
+    // Education Section Logos
+    const iceLogos = document.querySelectorAll('img[src*="ICE_dt_1"], img[src*="ICE_lt_1"]');
+    const olevelsLogos = document.querySelectorAll('img[src*="Olevels_dt_logo"], img[src*="olevels_lt_logo"]');
+
+    iceLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/ICE_lt_1.png' : 'Logos/ICE_dt_1.png';
+    });
+
+    olevelsLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/olevels_lt_logo.png' : 'Logos/Olevels_dt_logo.png';
+    });
   };
 
   // Function to initialize tsParticles Neural Network Grid
