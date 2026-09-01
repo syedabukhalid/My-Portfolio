@@ -1,0 +1,19 @@
+These codes are perfect but i need few changes in them.
+
+in the Certifications page, make a new section for "GeeksforGeeks" and then make 9 new certificates:
+first certificates name should be "MongoDB Overview" add this link "https://www.geeksforgeeks.org/batch/mongodb-overview?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+second certificates name should be "Introduction to Generative AI with Snowflake" add this link "https://www.geeksforgeeks.org/batch/introduction-to-generative-ai-with-snowflake-batch?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+third certificates name should be "Relational to Document Model" add this link "https://www.geeksforgeeks.org/batch/relational-to-document-model?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+forth certificates name should be "Indexing Design Fundamentals" add this link "https://www.geeksforgeeks.org/batch/indexing-design-fundamentals?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+fifth certificates name should be "Vector Search Fundamentals" add this link "https://www.geeksforgeeks.org/batch/vector-search-fundamentals?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+sixth certificates name should be "RAG with MongoDB" add this link "https://www.geeksforgeeks.org/batch/rag-with-mongodb?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+7th certificates name should be "Intro to Snowflake for Devs, Data Scientists, Data Engineers" add this link "https://www.geeksforgeeks.org/batch/intro-to-snowflake-for-devs-data-scientists-data-engineers?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+8th certificates name should be "Introduction to Modern Data Engineering with Snowflake" add this link "https://www.geeksforgeeks.org/batch/introduction-to-modern-data-engineering-with-snowflake-batch?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+9th certificates name should be "Advanced Data Engineering with Snowflake" add this link "https://www.geeksforgeeks.org/batch/advanced-data-engineering-with-snowflake?tab=Resources" and the name of the certificate image will be "In Progress.jpg"
+
+the logo image fine name is "geeksforgeeks_logo.png" for geeksforgeeks.
+
+
+
+
+These are the current Code files, update them and send me (and dont change things that i did not said):

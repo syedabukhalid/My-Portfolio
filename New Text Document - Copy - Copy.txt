@@ -1,0 +1,2008 @@
+These codes are perfect but i need few changes in them.
+
+
+i want to add this in "Projects" section before projects:
+"Explore my GitHub profile to see my coding style, architecture choices, and recent commits." and on "GitHub", link this "https://github.com/syedabukhalid"
+
+
+
+
+
+
+
+
+
+
+
+
+These are the current Code files, update them and send me (and dont change things that i did not said)(if there are no changes in any code file, do send the same unchanged code in your response [Example response for that file: "HTML file in unchanged", "CSS file in unchanged", or "JavaScript file in unchanged"]):
+
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Abu Khalid - Portfolio</title>
+  <link rel="icon" type="image/jpeg" href="profile.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- tsParticles Engine & Preset Links CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2.12.0/tsparticles.engine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2.12.0/tsparticles.basic.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-interaction-external-grab@2.12.0/tsparticles.interaction.external.grab.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-interaction-external-attract@2.12.0/tsparticles.interaction.external.attract.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-plugin-canvas-mask@2.12.0/tsparticles.plugin.canvas-mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- Lightweight Background Container for Neural Network Particle Mesh -->
+<div id="tsparticles"></div>
+
+<!-- Navigation Bar -->
+<header>
+  <nav class="navbar">
+    <a href="#home" class="logo">Abu <span>Khalid</span></a>
+    
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Theme Toggle Switch -->
+    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light and dark mode">
+      <i class="fa-solid fa-sun"></i>
+    </button>
+
+    <!-- Hamburger Toggle Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+</header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="section">
+      <div class="home-container">
+        <div class="home-text">
+          <h1>Syed Abu Khalid</h1>
+          <p class="bio">
+            Hello! I'm Abu Khalid, <span id="typedRole"></span><span class="typed-cursor">|</span><br><br>
+            My official name is Muhammad Affan Bukhari but people call me Syed Abu Khalid.<br><br>
+            I am an entry-level IT & software candidate with hands on experience in Python, SQL, and Agentic AI technologies. I've done advanced certifications from Google, Oracle, Cisco, Redis, Hackviser, and Anthropic, along with a background tutoring AS Level Physics and Computer Science.
+          </p>
+          <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="home-img">
+          <div class="profile-gear-container" id="profileContainer">
+            <div class="gear-ring"></div>
+            <img src="profile.jpg" alt="Syed Abu Khalid Profile Picture" id="profilePic">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Programming</h3>
+          <p>HTML, CSS, JavaScript, Python</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Data Analysis</h3>
+          <p>SQL, MS Excel, Power BI</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Agentic AI</h3>
+          <p>LangChain, AutoGen, LLM Integration, Vector Databases</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Cybersecurity</h3>
+          <p>Penetration Testing, Network Security, Vulnerability Assessment, Cryptography</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-wrench"></i>
+          <h3>Developer Tools</h3>
+          <p>VS Code, Git</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+      <h2 class="section-title">Certifications</h2>
+
+      <!-- Google -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/Google_logo.webp" alt="Google Logo" class="provider-logo">
+          <h3>Google</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>Gemini Certified K-12 Student</h4>
+            <img src="Certificates/google-gemini-certified-student-k-12.png" alt="Gemini Certified Student Certificate" class="cert-modal-trigger">
+            <a href="https://edu.exceedlms.com/student/award/c3WKpYgNUoURPSDrUfwEGot1" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Gemini Certified University Student</h4>
+            <img src="Certificates/google-gemini-certified-student-University.png" alt="Gemini Certified Student Certificate" class="cert-modal-trigger">
+            <a href="https://edu.exceedlms.com/student/award/c3WKpYgNUoURPSDrUfwEGot1" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Google Certified Educator Level 1</h4>
+            <img src="Certificates/Google_Certified_Educator_Level_1.png" alt="Google Certified Educator Level 1 Certificate" class="cert-modal-trigger">
+            <a href="http://skills.google/public_profiles/4b2668df-834c-4ac3-86bd-82a32398b761" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Gemini for Security Engineers</h4>
+            <img src="Certificates/Gemini_for_Security_Engineers.png" alt="Gemini for Security Engineers Certificate" class="cert-modal-trigger">
+            <a href="https://www.skills.google/public_profiles/4b2668df-834c-4ac3-86bd-82a32398b761/badges/27154957" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Security Command Center Fundamentals</h4>
+            <img src="Certificates/Security_Command_Center_Fundamentals.png" alt="Security Command Center Fundamentals Certificate" class="cert-modal-trigger">
+            <a href="https://www.skills.google/public_profiles/4b2668df-834c-4ac3-86bd-82a32398b761/badges/27164145" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Gemini for Data Scientists and Analysts</h4>
+            <img src="Certificates/Gemini_for_Data_Scientists_and_Analysts.png" alt="Security Command Center Fundamentals Certificate" class="cert-modal-trigger">
+            <a href="https://www.skills.google/public_profiles/4b2668df-834c-4ac3-86bd-82a32398b761/badges/27288783" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Trust and Security with Google Cloud</h4>
+            <img src="Certificates/Trust_and_Security_with_Google_Cloud.png" alt="Security Command Center Fundamentals Certificate" class="cert-modal-trigger">
+            <a href="https://www.skills.google/public_profiles/4b2668df-834c-4ac3-86bd-82a32398b761/badges/27421847" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Foundations of Cybersecurity</h4>
+            <img src="Certificates/In Progress.jpg" alt="Foundations of Cybersecurity Certificate" class="cert-modal-trigger">
+            <a href="https://www.coursera.org/learn/foundations-of-cybersecurity" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anthropic -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/Anthropic_d_logo.png" alt="Anthropic Logo" class="provider-logo">
+          <h3>Anthropic</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>AI Fluency Framework & Foundations</h4>
+            <img src="Certificates/anthropic-ai-fluency-framework-foundations.jpg" alt="Anthropic AI Fluency Certificate" class="cert-modal-trigger">
+            <a href="https://verify.skilljar.com/c/d69oxxsc83if" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Claude 101</h4>
+            <img src="Certificates/anthropic-claude-101.jpg" alt="Anthropic Claude 101 Certificate" class="cert-modal-trigger">
+            <a href="https://verify.skilljar.com/c/5h8cf9xektgz" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Claude Code in Action</h4>
+            <img src="Certificates/anthropic-claude-code-in-action.jpg" alt="Anthropic Claude Code Certificate" class="cert-modal-trigger">
+            <a href="https://verify.skilljar.com/c/5t8snjv6c2yr" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Introduction to Model Context Protocol</h4>
+            <img src="Certificates/anthropic-introduction-to-model-context-protocol.jpg" alt="Anthropic MCP Certificate" class="cert-modal-trigger">
+            <a href="https://verify.skilljar.com/c/8tmyhr4qejot" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Teaching the AI Fluency Framework</h4>
+            <img src="Certificates/anthropic-teaching-ai-fluency-framework.jpg" alt="Anthropic Teaching AI Fluency Certificate" class="cert-modal-trigger">
+            <a href="https://verify.skilljar.com/c/j3ftuovk4d2p" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oracle -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/Oracle_d_logo.webp" alt="Oracle Logo" class="provider-logo">
+          <h3>Oracle</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>Agentic AI Certified Foundations Associate</h4>
+            <img src="Certificates/oracle-agentic-a1-certified-foundations-associate.jpg" alt="Oracle Agentic AI Foundations Certificate" class="cert-modal-trigger">
+            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=346B5346DB92DBAF5377FE00AC85859B90EECDE3F2DCB7817D7D8DB29A82DA9E" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cisco -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/Cisco_logo.webp" alt="Cisco Logo" class="provider-logo">
+          <h3>Cisco</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>Introduction to Cybersecurity</h4>
+            <img src="Certificates/cisco-introduction-to-cybersecurity.jpg" alt="Cisco Introduction to Cybersecurity Certificate" class="cert-modal-trigger">
+            <a href="https://www.netacad.com/recognitions/verify/4c41588d-a839-4fee-a819-44cec4621f76" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HackerRank -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/HackerRank_s_logo.png" alt="HackerRank Logo" class="provider-logo">
+          <h3>HackerRank</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>SQL (Advanced)</h4>
+            <img src="Certificates/hackerrank-sql-advanced.jpg" alt="HackerRank SQL Advanced Certificate" class="cert-modal-trigger">
+            <a href="https://www.hackerrank.com/certificates/iframe/88790c6c8155" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Python (Basic)</h4>
+            <img src="Certificates/hackerrank-python-basic.jpg" alt="HackerRank Python Basic Certificate" class="cert-modal-trigger">
+            <a href="https://www.hackerrank.com/certificates/iframe/2e1d8d6933ac" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hackviser -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/Hackviser_logo.jpg" alt="Hackviser Logo" class="provider-logo">
+          <h3>Hackviser</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>Certified Cybersecurity Foundations</h4>
+            <img src="Certificates/hackviser-certified-cybersecurity-foundations.jpg" alt="Hackviser Certified Cybersecurity Foundations Certificate" class="cert-modal-trigger">
+            <a href="https://hackviser.com/verify?id=HV-CORE-VI3OBCHH" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RedTeamLeaders -->
+      <div class="cert-provider">
+        <div class="provider-header">
+          <img src="Logos/RedTeamLeaders_s_logo.jfif" alt="RedTeamLeaders Logo" class="provider-logo">
+          <h3>RedTeamLeaders</h3>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h4>Offensive Agent AI Course</h4>
+            <img src="Certificates/redteamleaders-offensive-agent-ai-course.jpg" alt="RedTeamLeaders Offensive Agent AI Certificate" class="cert-modal-trigger">
+            <a href="https://courses.redteamleaders.com/completion/3ff5b8af94fab772" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+          <div class="cert-card">
+            <h4>Introduction to Offensive Security with Artificial Intelligence</h4>
+            <img src="Certificates/Introduction_to_Offensive_Security_with_Artificial_Intelligence.jpg" alt="Introduction to Offensive Security with Artificial Intelligence Certificate" class="cert-modal-trigger">
+            <a href="https://courses.redteamleaders.com/completion/3c97b1620c7b3163" target="_blank" rel="noopener noreferrer" class="btn cert-btn">Verify Credential</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="education-container">
+        <div class="education-cards">
+          <div class="edu-card">
+            <div class="edu-card-content">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3>Computing course</h3>
+              <p class="edu-sub">Xyz university — Pakistan | 2027</p>
+            </div>
+            <div class="edu-action">
+              <img src="ICE_2.png" alt="XYZ Logo" class="edu-logo">
+              <a href="https://docs.google.com/document/d/1o32ykOUNj0pTycBHhUeX7ws7ZJN84l9AubMpf3XQMWs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn edu-btn">View Documents</a>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-card-content">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3>GED (General Educational Development)</h3>
+              <p class="edu-sub">Private Candidate — Riyadh, KSA | 2026</p>
+            </div>
+            <div class="edu-action">
+              <img src="GED.svg" alt="GED Logo" class="edu-logo">
+              <a href="https://docs.google.com/document/d/1o32ykOUNj0pTycBHhUeX7ws7ZJN84l9AubMpf3XQMWs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn edu-btn">View Documents</a>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-card-content">
+              <i class="fa-solid fa-book-open"></i>
+              <h3>AS Level (Physics, Computer Science, Mathematics)</h3>
+              <p class="edu-sub">Olevels.com — Online | 2025</p>
+            </div>
+            <div class="edu-action">
+              <img src="olevels.png" alt="Olevels Logo" class="edu-logo">
+              <a href="https://docs.google.com/document/d/1o32ykOUNj0pTycBHhUeX7ws7ZJN84l9AubMpf3XQMWs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn edu-btn">View Documents</a>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-card-content">
+              <i class="fa-solid fa-book-open"></i>
+              <h3>O'Level (Physics, Computer Science, Mathematics, Chemistry, English)</h3>
+              <p class="edu-sub">Olevels.com — Online | 2023</p>
+            </div>
+            <div class="edu-action">
+              <img src="olevels.png" alt="Olevels Logo" class="edu-logo">
+              <a href="https://docs.google.com/document/d/1o32ykOUNj0pTycBHhUeX7ws7ZJN84l9AubMpf3XQMWs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn edu-btn">View Documents</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-container">
+        <div class="experience-cards">
+          <div class="exp-card">
+            <div class="exp-header">
+              <h3>Private AS Levels Tutor</h3>
+              <span class="exp-subject">Physics & Computer Science</span>
+            </div>
+            <p>
+              I provided private online tutoring in AS Level Physics and Computer Science, helping students understand complex technical concepts through interactive classes. I created custom learning materials, practice problems, and exam preparation strategies tailored to Edexcel IAL standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+        <div class="projects-cards">
+          <div class="project-card">
+            <div class="project-card-content">
+              <h3>My personal portfolio website</h3>
+              <p class="edu-sub">This responsive portfolio serves as a live demonstration of my fundamentals in HTML5, CSS3, and JavaScript.</p>
+            </div>
+            <div class="project-action">
+              <a href="https://syedabukhalid.github.io/My-Portfolio/" class="btn project-btn">View Project</a>
+            </div>
+          </div>
+
+          <!-- Shoaib Arif's portfolio (Box on Left, Snapshots Carousel on Right) -->
+          <div class="project-layout-row left-box">
+            <div class="project-card block-card">
+              <h3>Shoaib Arif's portfolio</h3>
+              <p class="edu-sub">This is an executive portfolio website I recently engineered for a senior Telecommunications <br>
+                Project Manager with 22+ years of industry experience. <br>
+                I designed this site to instantly establish high level authority by combining key achievement metrics, an <br>
+                interactive timeline of his international corporate career (Huawei, Nokia, NEC), structured technical expertise<br>
+                cards, certification badges, and a direct client inquiry system. The site features full dark/light mode switching,<br>
+                responsive mobile layout, and clean typography.</p>
+              <div class="project-action">
+                <a href="https://syedabukhalid.github.io/Muhammad-Shoaib-Arif-Portfolio/" target="_blank" rel="noopener noreferrer" class="btn project-btn">View Project</a>
+              </div>
+            </div>
+            <div class="snapshot-carousel" id="shoaibCarousel">
+              <div class="carousel-track">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_1.png" alt="Shoaib Arif Project Snapshot 1" class="snapshot-img">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_2.png" alt="Shoaib Arif Project Snapshot 2" class="snapshot-img">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_3.png" alt="Shoaib Arif Project Snapshot 3" class="snapshot-img">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_4.png" alt="Shoaib Arif Project Snapshot 4" class="snapshot-img">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_5.png" alt="Shoaib Arif Project Snapshot 5" class="snapshot-img">
+                <img src="Project_Shoaib_Arif_Snaps/Shoaib_Arif_Project_Snapshot_6.png" alt="Shoaib Arif Project Snapshot 6" class="snapshot-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Zubair Alam's portfolio (Snapshots Carousel on Left, Box on Right) -->
+          <div class="project-layout-row right-box">
+            <div class="snapshot-carousel" id="zubairCarousel">
+              <div class="carousel-track">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_1.png" alt="Zubair Alam Project Snapshot 1" class="snapshot-img">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_2.png" alt="Zubair Alam Project Snapshot 2" class="snapshot-img">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_3.png" alt="Zubair Alam Project Snapshot 3" class="snapshot-img">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_4.png" alt="Zubair Alam Project Snapshot 4" class="snapshot-img">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_5.png" alt="Zubair Alam Project Snapshot 5" class="snapshot-img">
+                <img src="Project_Zubair_Alam_Snaps/Zubair_Alam_Project_Snapshot_6.png" alt="Zubair Alam Project Snapshot 6" class="snapshot-img">
+              </div>
+            </div>
+            <div class="project-card block-card">
+              <h3>Zubair Alam's portfolio</h3>
+              <p class="edu-sub">This is another senior engineering portfolio website I designed and developed. <br>
+                For this project, I turned 19+ years of international telecom engineering experience across 4 countries into a clean,<br>
+                modern digital presence. Key features include an interactive career timeline with deep-dive pop-up modals for each role<br>
+                (Huawei, Ericsson, ZTE), visual technical skill badges, certification showcases, and a full dark/light mode toggle.</p>
+              <div class="project-action">
+                <a href="https://syedabukhalid.github.io/Muhammad-Zubair-Alam/" target="_blank" rel="noopener noreferrer" class="btn project-btn">View Project</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-container">
+        <!-- Left Side Details -->
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p class="contact-sub">Have a question or want to work together? Drop me a message!</p>
+
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:syedabukhalid.pro@gmail.com" target="_blank" rel="noopener noreferrer">syedabukhalid.pro@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:+966567967138">+966 56 796 7138</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <div>
+              <strong>LinkedIn</strong>
+              <p><a href="https://www.linkedin.com/in/syed-abu-khalid-bukhari/" target="_blank" rel="noopener noreferrer">Syed Abu Khalid</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Location</strong>
+              <p><a href="https://maps.app.goo.gl/r87WWgJw9U3M8tPj6" target="_blank" rel="noopener noreferrer"> Riyadh, KSA </a></p>
+            <p><a href="https://maps.app.goo.gl/9j8eX5dM8AyS41Mm6" target="_blank" rel="noopener noreferrer"> Islamabad, Pakistan </a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/meajnpbj" method="POST">
+          <input type="text" name="name" autocomplete="name" placeholder="Your Name" required>
+          <input type="tel" name="phone" autocomplete="tel" placeholder="Your Number (Optional)">
+          <input type="email" name="email" autocomplete="email" placeholder="Your Email" required>
+          <input type="text" name="subject" autocomplete="off" placeholder="Subject" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn" id="submitBtn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <button class="modal-arrow modal-prev" id="modalPrevBtn" aria-label="Previous Image">&#10094;</button>
+    <img class="modal-content" id="imgFull">
+    <button class="modal-arrow modal-next" id="modalNextBtn" aria-label="Next Image">&#10095;</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Syed Abu Khalid. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+CSS:
+/* Color Variables & Base Reset */
+:root {
+  --bg-primary: #0a1128;
+  --bg-secondary: #001f54;
+  --bg-card: #034078;
+  --header-bg: rgba(10, 17, 40, 0.95);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --text-main: #f4f4f9;
+  --text-muted: #a0aab8;
+  --accent-green: #00ff87;
+  --glow-shadow: 0 0 15px rgba(0, 255, 135, 0.6);
+  --particle-color: #00ff87;
+}
+
+/* Light Blue Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #e6f0fa;
+  --bg-secondary: #cce0f5;
+  --bg-card: #b3d1f0;
+  --header-bg: rgba(230, 240, 250, 0.95);
+  --border-color: rgba(0, 51, 102, 0.1);
+  --text-main: #0a1828;
+  --text-muted: #3a506b;
+  --accent-green: #0077b6;
+  --glow-shadow: 0 0 15px rgba(0, 119, 182, 0.4);
+  --particle-color: #0077b6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Dynamic Typing & Terminal Cursor Styling */
+#typedRole {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.typed-cursor {
+  color: var(--accent-green);
+  font-weight: bold;
+  animation: blink 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Fixed background for tsParticles canvas container */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header & Navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.logo span {
+  color: var(--accent-green);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-green);
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 255, 135, 0.1);
+  box-shadow: var(--glow-shadow);
+  transform: scale(1.05);
+}
+
+/* Hamburger Toggle Button (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1100;
+  margin-left: 1rem;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Universal Button Style */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--accent-green);
+  border: 2px solid var(--accent-green);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  box-shadow: var(--glow-shadow);
+  background-color: rgba(0, 255, 135, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Sections Base */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 3rem 2rem;
+  min-height: 80vh;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: var(--accent-green);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-green);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Home Section & Gear Profile (Scroll Driven Rotation) */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.home-text {
+  flex: 1;
+}
+
+.home-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-text .bio {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.home-img {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-gear-container {
+  position: relative;
+  width: 290px;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px dashed var(--accent-green);
+  box-shadow: var(--glow-shadow);
+  transform: rotate(var(--gear-angle, 0deg));
+  will-change: transform;
+}
+
+.profile-gear-container img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+.skill-card i {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Certifications Section */
+.cert-provider {
+  margin-bottom: 3rem;
+}
+
+.provider-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent-green);
+  padding-left: 0.5rem;
+}
+
+.provider-logo {
+  max-height: 35px;
+  max-width: 35px;
+  object-fit: contain;
+}
+
+.cert-provider h3 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-card {
+  background-color: var(--bg-secondary);
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.cert-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+.cert-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cert-card img:hover {
+  transform: scale(1.03);
+}
+
+.cert-btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent-green);
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Image Modal / Full View Lightbox */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 2010;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--accent-green);
+}
+
+/* Modal Swapping Arrows */
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 1px solid var(--border-color);
+  font-size: 2rem;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2010;
+  user-select: none;
+}
+
+.modal-arrow:hover {
+  background: var(--accent-green);
+  color: #000;
+  box-shadow: var(--glow-shadow);
+}
+
+.modal-prev {
+  left: 20px;
+}
+
+.modal-next {
+  right: 20px;
+}
+
+/* Education Section */
+.education-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.education-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edu-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-green);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+.edu-card i {
+  font-size: 1.8rem;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+}
+
+.edu-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.edu-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.edu-logo {
+  max-height: 45px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.edu-btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Experience Section */
+.experience-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.experience-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-green);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.exp-subject {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+/* Projects Section & Snapshot Carousel Styles */
+.projects-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.projects-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-green);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  flex: 1;
+}
+
+/* Card format for full width text layout with centered button at bottom */
+.project-card.block-card {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-card.block-card .project-action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+.project-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-logo {
+  max-height: 45px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.project-btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Side-by-Side Project Layout Rows */
+.project-layout-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.project-layout-row.left-box {
+  flex-direction: row;
+}
+
+.project-layout-row.right-box {
+  flex-direction: row;
+}
+
+/* 3D Snapshot Carousel Styling */
+.snapshot-carousel {
+  flex: 1;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snapshot-img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  max-width: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  transform: translateX(100%) scale(0.85);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center / Main Active Snapshot */
+.snapshot-img.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 3;
+  pointer-events: auto;
+  box-shadow: var(--glow-shadow);
+  border-color: var(--accent-green);
+}
+
+/* Left Peek Snapshot (Shows ~10.37% visible) */
+.snapshot-img.prev {
+  opacity: 0.7;
+  transform: translateX(-79.26%) scale(0.88);
+  z-index: 2;
+}
+
+/* Right Peek Snapshot (Shows ~10.37% visible) */
+.snapshot-img.next {
+  opacity: 0.7;
+  transform: translateX(79.26%) scale(0.88);
+  z-index: 2;
+}
+
+/* Contact Section */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-sub {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--accent-green);
+  width: 30px;
+}
+
+.info-item a {
+  color: var(--text-main);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.info-item a:hover {
+  color: var(--accent-green);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hide default browser datalist drop-down arrows */
+.contact-form input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
+
+/* Tablet & Mobile Screens (<= 992px) */
+@media (max-width: 992px) {
+  .section {
+    padding: 5rem 1.5rem 2.5rem 1.5rem;
+  }
+
+  .home-container,
+  .education-container,
+  .experience-container,
+  .projects-container,
+  .contact-container {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .project-layout-row,
+  .project-layout-row.left-box,
+  .project-layout-row.right-box {
+    flex-direction: column;
+  }
+
+  .snapshot-carousel {
+    width: 100%;
+    height: 200px;
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  .home-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  /* Mobile Navigation Menu */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  /* Profile Gear Resizing for Mobile */
+  .profile-gear-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-gear-container img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .edu-card,
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .edu-action,
+  .project-action {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .edu-logo,
+  .project-logo {
+    margin-left: 0;
+  }
+
+  .modal-arrow {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Small Smartphone Screens (<= 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem 1.2rem;
+  }
+
+  .home-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-text .bio {
+    font-size: 0.95rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .edu-btn,
+  .project-btn,
+  .cert-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+JavaScript:
+document.addEventListener('DOMContentLoaded', () => {
+  // Dynamic Role Typing Animation Implementation
+  const typedRoleElement = document.getElementById('typedRole');
+  if (typedRoleElement) {
+    const roles = [
+      "Entry-Level IT & Software Candidate",
+      "Agentic AI Developer",
+      "Data Analyst",
+      "Cybersecurity enthusiast"
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 80;
+    const deletingSpeed = 40;
+    const pauseBetween = 1800;
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        typedRoleElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedRoleElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        timeout = pauseBetween;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        timeout = 500;
+      }
+
+      setTimeout(typeEffect, timeout);
+    }
+
+    typeEffect();
+  }
+
+  // Global reference for tsParticles instance
+  let particlesInstance = null;
+
+  // Helper function to dynamically calculate theme color hex values
+  const getParticleColor = (isLight) => {
+    return isLight ? '#0077b6' : '#00ff87';
+  };
+
+  // Helper function to update logos depending on active theme
+  const updateLogosForTheme = (isLight) => {
+    // Select images by their src attributes
+    const oracleLogo = document.querySelector('img[src*="Oracle_d_logo"], img[src*="Oracle_l_logo"]');
+    const anthropicLogo = document.querySelector('img[src*="Anthropic_d_logo"], img[src*="Anthropic_l_logo"]');
+    const ciscoLogo = document.querySelector('img[src*="Cisco_logo"], img[src*="Cisco_l_logo"]');
+
+    if (oracleLogo) {
+      oracleLogo.src = isLight ? 'Logos/Oracle_l_logo.png' : 'Logos/Oracle_d_logo.webp';
+    }
+    if (anthropicLogo) {
+      anthropicLogo.src = isLight ? 'Logos/Anthropic_l_logo.png' : 'Logos/Anthropic_d_logo.png';
+    }
+    if (ciscoLogo) {
+      ciscoLogo.src = isLight ? 'Logos/Cisco_l_logo.png' : 'Logos/Cisco_logo.webp';
+    }
+  };
+
+  // Function to initialize tsParticles Neural Network Grid
+  const initTsParticles = (isLight) => {
+    if (typeof tsParticles === 'undefined') return;
+
+    const particleColor = getParticleColor(isLight);
+
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      fpsLimit: 60,
+      particles: {
+        number: {
+          value: 65,
+          density: {
+            enable: true,
+            area: 800
+          }
+        },
+        color: {
+          value: particleColor
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: false
+        },
+        size: {
+          value: { min: 1.5, max: 3.5 }
+        },
+        links: {
+          enable: true,
+          distance: 140,
+          color: particleColor,
+          opacity: 0.35,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: false,
+          straight: false,
+          outModes: {
+            default: "bounce"
+          },
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detectsOn: "window",
+        events: {
+          onHover: {
+            enable: true,
+            mode: ["grab", "attract"]
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 180,
+            links: {
+              opacity: 0.75
+            }
+          },
+          attract: {
+            distance: 220,
+            duration: 0.4,
+            factor: 3,
+            speed: 1
+          }
+        }
+      },
+      detectRetina: true
+    }).then(container => {
+      particlesInstance = container;
+    });
+  };
+
+  // Setup Profile Picture Gravity Attraction to Node Lines
+  const setupProfileAttraction = () => {
+    const profilePic = document.getElementById('profilePic');
+    if (!profilePic) return;
+
+    profilePic.addEventListener('mousemove', (e) => {
+      if (!particlesInstance) return;
+      const rect = profilePic.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Pulse particle links attraction towards profile picture center
+      if (particlesInstance.particles && particlesInstance.particles.quadTree) {
+        const particlesList = particlesInstance.particles.filter();
+        particlesList.forEach(p => {
+          const dx = centerX - p.position.x;
+          const dy = centerY - p.position.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200) {
+            p.velocity.x += (dx / dist) * 0.15;
+            p.velocity.y += (dy / dist) * 0.15;
+          }
+        });
+      }
+    });
+  };
+
+  // 0. Dark / Light Mode Theme Toggle
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+  // Retrieve existing user setting from LocalStorage or default to dark mode
+  const savedTheme = localStorage.getItem('theme');
+  const isInitialLight = savedTheme === 'light';
+
+  if (isInitialLight) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (themeIcon) {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    }
+    updateLogosForTheme(true);
+  }
+
+  // Initialize particles with active theme setting
+  initTsParticles(isInitialLight);
+  setupProfileAttraction();
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const isLight = currentTheme !== 'light';
+
+      if (currentTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        if (themeIcon) {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        }
+        updateLogosForTheme(false);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        if (themeIcon) {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        }
+        updateLogosForTheme(true);
+      }
+
+      // Re-initialize particle background colors according to theme
+      initTsParticles(isLight);
+    });
+  }
+
+  // 1. Mobile Navigation Hamburger Menu Toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.querySelector('.nav-links');
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+
+  if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      navLinks.classList.toggle('nav-active');
+    });
+
+    // Close mobile menu automatically when a link is clicked
+    navLinkItems.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        navLinks.classList.remove('nav-active');
+      });
+    });
+  }
+
+  // 2. Rotate Profile Gear Ring on Scroll (Optimized for Mobile Smoothness)
+  const gearRing = document.querySelector('.gear-ring');
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (gearRing && !ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollAngle = window.scrollY * 0.4;
+        gearRing.style.setProperty('--gear-angle', `${scrollAngle}deg`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // 3. Active Link Highlighting on Scroll
+  const sections = document.querySelectorAll('section');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 150) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinkItems.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }, { passive: true });
+
+  // 4. Certificate & Snapshot Lightbox Modal logic (with Arrow Navigation)
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('imgFull');
+  const certImages = document.querySelectorAll('.cert-modal-trigger');
+  const closeModal = document.querySelector('.modal-close');
+  const modalPrevBtn = document.getElementById('modalPrevBtn');
+  const modalNextBtn = document.getElementById('modalNextBtn');
+
+  let currentModalGroup = [];
+  let currentModalIndex = 0;
+
+  function openModalWithGroup(group, index) {
+    if (!modal || !modalImg || group.length === 0) return;
+    currentModalGroup = group;
+    currentModalIndex = index;
+    modalImg.src = currentModalGroup[currentModalIndex].src;
+    modal.style.display = 'flex';
+  }
+
+  function showNextModalImage() {
+    if (currentModalGroup.length === 0) return;
+    currentModalIndex = (currentModalIndex + 1) % currentModalGroup.length;
+    modalImg.src = currentModalGroup[currentModalIndex].src;
+  }
+
+  function showPrevModalImage() {
+    if (currentModalGroup.length === 0) return;
+    currentModalIndex = (currentModalIndex - 1 + currentModalGroup.length) % currentModalGroup.length;
+    modalImg.src = currentModalGroup[currentModalIndex].src;
+  }
+
+  // Bind cert images for modal navigation
+  const certImagesArray = Array.from(certImages);
+  certImagesArray.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      openModalWithGroup(certImagesArray, index);
+    });
+  });
+
+  if (modalNextBtn) modalNextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNextModalImage(); });
+  if (modalPrevBtn) modalPrevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevModalImage(); });
+
+  if (closeModal) {
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+
+  // Keyboard navigation for modal
+  document.addEventListener('keydown', (e) => {
+    if (modal && modal.style.display === 'flex') {
+      if (e.key === 'ArrowRight') showNextModalImage();
+      if (e.key === 'ArrowLeft') showPrevModalImage();
+      if (e.key === 'Escape') modal.style.display = 'none';
+    }
+  });
+
+  // 5. Contact Form Submission (Formspree Integration)
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          alert('Thank you! Your message has been sent successfully.');
+          contactForm.reset();
+        } else {
+          alert('Oops! There was a problem submitting your form. Please try again.');
+        }
+      } catch (error) {
+        alert('Oops! There was a network error sending your message.');
+      } finally {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // 6. Staggered Scroll Reveal for Certification Cards
+  const certGrids = document.querySelectorAll('.cert-grid');
+
+  if ('IntersectionObserver' in window) {
+    const certObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll('.cert-card');
+          cards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+            card.classList.add('reveal');
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    certGrids.forEach(grid => certObserver.observe(grid));
+  } else {
+    // Fallback for older browsers
+    document.querySelectorAll('.cert-card').forEach(card => card.classList.add('reveal'));
+  }
+
+  // 7. Interactive 3D Snapshot Carousels (Clickable Snapshots + Dynamic Timer Switching)
+  function setupSnapshotCarousel(carouselId) {
+    const carouselContainer = document.getElementById(carouselId);
+    if (!carouselContainer) return;
+
+    const images = Array.from(carouselContainer.querySelectorAll('.snapshot-img'));
+    if (images.length === 0) return;
+
+    let currentIndex = 0;
+    let timerId = null;
+
+    function updateCarousel() {
+      const total = images.length;
+
+      images.forEach((img, index) => {
+        img.classList.remove('active', 'prev', 'next');
+        img.style.pointerEvents = 'none';
+
+        const prevIndex = (currentIndex - 1 + total) % total;
+        const nextIndex = (currentIndex + 1) % total;
+
+        if (index === currentIndex) {
+          img.classList.add('active');
+          img.style.pointerEvents = 'auto';
+        } else if (index === prevIndex) {
+          img.classList.add('prev');
+          img.style.pointerEvents = 'auto';
+        } else if (index === nextIndex) {
+          img.classList.add('next');
+          img.style.pointerEvents = 'auto';
+        }
+      });
+    }
+
+    function scheduleNextSlide(delayMs) {
+      if (timerId) clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+        scheduleNextSlide(2500); // Resume 2.5 second automatic loop
+      }, delayMs);
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        const total = images.length;
+        const prevIndex = (currentIndex - 1 + total) % total;
+        const nextIndex = (currentIndex + 1) % total;
+
+        if (index === currentIndex) {
+          // Open active snapshot in full modal with its group
+          openModalWithGroup(images, index);
+        } else if (index === nextIndex || index === prevIndex) {
+          // Switch immediately to clicked next/prev snapshot (loops seamlessly)
+          currentIndex = index;
+          updateCarousel();
+          scheduleNextSlide(9500); // Hold manual selection for 9.5 seconds
+        }
+      });
+    });
+
+    updateCarousel();
+    scheduleNextSlide(2500); // Initial 2.5 second start loop
+  }
+
+  setupSnapshotCarousel('shoaibCarousel');
+  setupSnapshotCarousel('zubairCarousel');
+});
