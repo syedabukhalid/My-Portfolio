@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const typedRoleElement = document.getElementById('typedRole');
   if (typedRoleElement) {
     const roles = [
-      "Entry-Level IT & Software Candidate",
-      "Agentic AI Developer",
+      "Software Developer",
+      "Specializing in Agentic AI integrations",
       "Data Analyst",
       "Cybersecurity enthusiast"
     ];
