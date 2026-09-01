@@ -399,32 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Staggered Scroll Reveal for Certification Cards
-  const certGrids = document.querySelectorAll('.cert-grid');
-
-  if ('IntersectionObserver' in window) {
-    const certObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const cards = entry.target.querySelectorAll('.cert-card');
-          cards.forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-            card.classList.add('reveal');
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15
-    });
-
-    certGrids.forEach(grid => certObserver.observe(grid));
-  } else {
-    // Fallback for older browsers
-    document.querySelectorAll('.cert-card').forEach(card => card.classList.add('reveal'));
-  }
-
-  // 7. Interactive 3D Snapshot Carousels (Clickable Snapshots + Dynamic Timer Switching)
+  // 6. Interactive 3D Snapshot Carousels (Clickable Snapshots + Dynamic Timer Switching)
   function setupSnapshotCarousel(carouselId) {
     const carouselContainer = document.getElementById(carouselId);
     if (!carouselContainer) return;
