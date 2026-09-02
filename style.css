@@ -858,9 +858,13 @@ footer {
     flex-direction: column;
   }
 
+  .project-layout-row.right-box {
+    flex-direction: column-reverse;
+  }
+
   .snapshot-carousel {
     width: 100%;
-    height: 200px;
+    height: 210px;
   }
 
   .home-text {
@@ -956,9 +960,44 @@ footer {
     margin-left: 0;
   }
 
+  /* Mobile Lightbox / Modal Adjustments */
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 92%;
+    max-height: 75vh;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+  }
+
   .modal-arrow {
     padding: 0.5rem 0.8rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-prev {
+    left: 8px;
+  }
+
+  .modal-next {
+    right: 8px;
+  }
+
+  .snapshot-img.prev {
+    transform: translateX(-68%) scale(0.85);
+    opacity: 0.5;
+  }
+
+  .snapshot-img.next {
+    transform: translateX(68%) scale(0.85);
+    opacity: 0.5;
   }
 }
 
@@ -992,5 +1031,28 @@ footer {
   .project-btn,
   .cert-btn {
     width: 100%;
+  }
+
+  .modal-arrow {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.2rem;
+  }
+
+  .snapshot-carousel {
+    height: 180px;
+  }
+
+  .snapshot-img {
+    max-width: 85%;
+  }
+
+  .snapshot-img.prev {
+    transform: translateX(-60%) scale(0.82);
+    opacity: 0.4;
+  }
+
+  .snapshot-img.next {
+    transform: translateX(60%) scale(0.82);
+    opacity: 0.4;
   }
 }

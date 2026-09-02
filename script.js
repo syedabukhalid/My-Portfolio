@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
-  // 4. Certificate & Snapshot Lightbox Modal logic (with Arrow Navigation)
+  // 4. Certificate & Snapshot Lightbox Modal logic (Grouped Per Provider)
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('imgFull');
   const certImages = document.querySelectorAll('.cert-modal-trigger');
@@ -327,11 +327,13 @@ document.addEventListener('DOMContentLoaded', () => {
     modalImg.src = currentModalGroup[currentModalIndex].src;
   }
 
-  // Bind cert images for modal navigation
-  const certImagesArray = Array.from(certImages);
-  certImagesArray.forEach((img, index) => {
+  // Bind certificate triggers scoped strictly within their respective provider block (.cert-provider)
+  certImages.forEach((img) => {
     img.addEventListener('click', () => {
-      openModalWithGroup(certImagesArray, index);
+      const providerContainer = img.closest('.cert-provider') || img.closest('.section') || document;
+      const group = Array.from(providerContainer.querySelectorAll('.cert-modal-trigger'));
+      const index = group.indexOf(img);
+      openModalWithGroup(group, index >= 0 ? index : 0);
     });
   });
 
@@ -350,6 +352,26 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
       }
     });
+  }
+
+  // Mobile Touch Swipe Navigation for Lightbox Modal
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (modal) {
+    modal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 40;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        showNextModalImage();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        showPrevModalImage();
+      }
+    }, { passive: true });
   }
 
   // Keyboard navigation for modal
