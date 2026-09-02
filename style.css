@@ -286,6 +286,91 @@ header {
   z-index: 1;
 }
 
+/* Smooth Infinite Logo Slider Container (No Background Strip) */
+.logo-slider-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  position: relative;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.logo-slider-track {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+  width: max-content;
+  animation: smoothSlide 35s linear infinite;
+}
+
+.logo-slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes smoothSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 75px;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: translateY(-4px);
+}
+
+.logo-item i {
+  font-size: 2.4rem;
+}
+
+.logo-item span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Dynamic Image Logo Sizing inside Slider */
+.slider-img-logo {
+  height: 38px;
+  width: auto;
+  max-width: 85px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: filter 0.3s ease;
+}
+
+/* Custom Icon Colors */
+.colored-excel { color: #107c41; }
+.colored-powerbi { color: #f2c811; }
+.colored-langchain { color: #1c3c3c; }
+.colored-autogen { color: #0078d4; }
+.colored-onenote { color: #7719aa; }
+.colored-word { color: #185abd; }
+.colored-powerpoint { color: #c43e1c; }
+.colored-docs { color: #4285f4; }
+.colored-sheets { color: #0f9d58; }
+.colored-forms { color: #7248b9; }
+.colored-slides { color: #f4b400; }
+.colored-classroom { color: #0f9d58; }
+.colored-drive { color: #ffba00; }
+.colored-gmail { color: #ea4335; }
+.colored-calendar { color: #4285f4; }
+.colored-github { color: var(--text-main); }
+
 /* Skills Section */
 .skills-grid {
   display: grid;

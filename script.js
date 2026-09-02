@@ -53,22 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Helper function to update logos depending on active theme
   const updateLogosForTheme = (isLight) => {
-    // Certifications Section Logos
-    const oracleLogo = document.querySelector('img[src*="Oracle_d_logo"], img[src*="Oracle_l_logo"]');
-    const anthropicLogo = document.querySelector('img[src*="Anthropic_d_logo"], img[src*="Anthropic_l_logo"]');
-    const ciscoLogo = document.querySelector('img[src*="Cisco_logo"], img[src*="Cisco_l_logo"]');
+    // Certifications & Slider Section Logos
+    const oracleLogos = document.querySelectorAll('img[src*="Oracle_d_logo"], img[src*="Oracle_l_logo"]');
+    const anthropicLogos = document.querySelectorAll('img[src*="Anthropic_d_logo"], img[src*="Anthropic_l_logo"]');
+    const ciscoLogos = document.querySelectorAll('img[src*="Cisco_logo"], img[src*="Cisco_l_logo"]');
 
-    if (oracleLogo) {
-      oracleLogo.src = isLight ? 'Logos/Oracle_l_logo.png' : 'Logos/Oracle_d_logo.webp';
-    }
-    if (anthropicLogo) {
-      anthropicLogo.src = isLight ? 'Logos/Anthropic_l_logo.png' : 'Logos/Anthropic_d_logo.png';
-    }
-    if (ciscoLogo) {
-      ciscoLogo.src = isLight ? 'Logos/Cisco_l_logo.png' : 'Logos/Cisco_logo.webp';
-    }
+    oracleLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/Oracle_l_logo.png' : 'Logos/Oracle_d_logo.webp';
+    });
+    anthropicLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/Anthropic_l_logo.png' : 'Logos/Anthropic_d_logo.png';
+    });
+    ciscoLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/Cisco_l_logo.png' : 'Logos/Cisco_logo.webp';
+    });
 
-    // Education Section Logos
+    // Education & Slider Section Logos
     const iceLogos = document.querySelectorAll('img[src*="ICE_dt_1"], img[src*="ICE_lt_1"]');
     const olevelsLogos = document.querySelectorAll('img[src*="Olevels_dt_logo"], img[src*="olevels_lt_logo"]');
 
