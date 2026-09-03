@@ -358,6 +358,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Cisco Certificate Sliding / Toggling
+  const ciscoCertImg = document.getElementById('ciscoCertImg');
+  if (ciscoCertImg) {
+    const ciscoCerts = [
+      "Certificates/Cisco_Introduction_to_Cybersecurity_certificate.jpg",
+      "Certificates/Cisco_Certificate_of_Course_Completion.jpg"
+    ];
+    let ciscoIndex = 0;
+
+    setInterval(() => {
+      ciscoIndex = (ciscoIndex + 1) % ciscoCerts.length;
+      ciscoCertImg.src = ciscoCerts[ciscoIndex];
+    }, 2500);
+  }
+
   // Mobile Touch Swipe Navigation for Lightbox Modal
   let touchStartX = 0;
   let touchEndX = 0;
