@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const anthropicLogos = document.querySelectorAll('img[src*="Anthropic_d_logo"], img[src*="Anthropic_l_logo"]');
     const ciscoLogos = document.querySelectorAll('img[src*="Cisco_logo"], img[src*="Cisco_l_logo"]');
     const ibmLogos = document.querySelectorAll('img[src*="IBM_logo"], img[src*="IBM_lt_logo"]');
+    const confluentLogos = document.querySelectorAll('img[src*="CONFLUENT-Developer_dt_o_logo"], img[src*="CONFLUENT-Developer_lt_o_logo_2"]');
 
     oracleLogos.forEach(logo => {
       logo.src = isLight ? 'Logos/Oracle_l_logo.png' : 'Logos/Oracle_d_logo.webp';
@@ -70,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     ibmLogos.forEach(logo => {
       logo.src = isLight ? 'Logos/IBM_lt_logo.png' : 'Logos/IBM_logo.webp';
+    });
+    confluentLogos.forEach(logo => {
+      logo.src = isLight ? 'Logos/CONFLUENT-Developer_lt_o_logo_2.png' : 'Logos/CONFLUENT-Developer_dt_o_logo.png';
     });
 
     // Education & Slider Section Logos
