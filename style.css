@@ -412,9 +412,57 @@ header {
   font-size: 0.95rem;
 }
 
-/* Certifications Section */
+/* Filter Box Controls */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: transparent;
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  box-shadow: var(--glow-shadow);
+}
+
 .cert-provider {
   margin-bottom: 3rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cert-provider.hide {
+  display: none !important;
 }
 
 .provider-header {

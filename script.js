@@ -214,18 +214,23 @@ document.addEventListener('DOMContentLoaded', () => {
       themeIcon.classList.add('fa-moon');
     }
     updateLogosForTheme(true);
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    if (themeIcon) {
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+    updateLogosForTheme(false);
   }
 
-  // Initialize particles with active theme setting
   initTsParticles(isInitialLight);
   setupProfileAttraction();
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const isLight = currentTheme !== 'light';
-
-      if (currentTheme === 'light') {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      
+      if (isLight) {
         document.documentElement.removeAttribute('data-theme');
         localStorage.setItem('theme', 'dark');
         if (themeIcon) {
@@ -233,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
           themeIcon.classList.add('fa-sun');
         }
         updateLogosForTheme(false);
+        initTsParticles(false);
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
@@ -241,17 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
           themeIcon.classList.add('fa-moon');
         }
         updateLogosForTheme(true);
+        initTsParticles(true);
       }
-
-      // Re-initialize particle background colors according to theme
-      initTsParticles(isLight);
     });
   }
 
-  // 1. Mobile Navigation Hamburger Menu Toggle
+  // Hamburger Menu Functional Logic
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navLinks = document.querySelector('.nav-links');
-  const navLinkItems = document.querySelectorAll('.nav-links a');
 
   if (hamburgerBtn && navLinks) {
     hamburgerBtn.addEventListener('click', () => {
@@ -259,8 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('nav-active');
     });
 
-    // Close mobile menu automatically when a link is clicked
-    navLinkItems.forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('active');
         navLinks.classList.remove('nav-active');
@@ -268,85 +270,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Rotate Profile Gear Ring on Scroll (Optimized for Mobile Smoothness)
+  // Scroll Gear Angle Update
   const gearRing = document.querySelector('.gear-ring');
-  let ticking = false;
-
   window.addEventListener('scroll', () => {
-    if (gearRing && !ticking) {
-      window.requestAnimationFrame(() => {
-        const scrollAngle = window.scrollY * 0.4;
-        gearRing.style.setProperty('--gear-angle', `${scrollAngle}deg`);
-        ticking = false;
-      });
-      ticking = true;
+    if (gearRing) {
+      const scrollPos = window.scrollY;
+      gearRing.style.setProperty('--gear-angle', `${scrollPos * 0.2}deg`);
     }
-  }, { passive: true });
+  });
 
-  // 3. Active Link Highlighting on Scroll
-  const sections = document.querySelectorAll('section');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.scrollY >= sectionTop - 150) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinkItems.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  }, { passive: true });
-
-  // 4. Certificate & Snapshot Lightbox Modal logic (Grouped Per Provider)
+  // Modal / Lightbox functionality for Certificates & Badges
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('imgFull');
-  const certImages = document.querySelectorAll('.cert-modal-trigger');
   const closeModal = document.querySelector('.modal-close');
-  const modalPrevBtn = document.getElementById('modalPrevBtn');
-  const modalNextBtn = document.getElementById('modalNextBtn');
+  const prevBtn = document.getElementById('modalPrevBtn');
+  const nextBtn = document.getElementById('modalNextBtn');
 
-  let currentModalGroup = [];
-  let currentModalIndex = 0;
+  const triggers = Array.from(document.querySelectorAll('.cert-modal-trigger'));
+  let currentImgIndex = -1;
 
-  function openModalWithGroup(group, index) {
-    if (!modal || !modalImg || group.length === 0) return;
-    currentModalGroup = group;
-    currentModalIndex = index;
-    modalImg.src = currentModalGroup[currentModalIndex].src;
-    modal.style.display = 'flex';
-  }
-
-  function showNextModalImage() {
-    if (currentModalGroup.length === 0) return;
-    currentModalIndex = (currentModalIndex + 1) % currentModalGroup.length;
-    modalImg.src = currentModalGroup[currentModalIndex].src;
-  }
-
-  function showPrevModalImage() {
-    if (currentModalGroup.length === 0) return;
-    currentModalIndex = (currentModalIndex - 1 + currentModalGroup.length) % currentModalGroup.length;
-    modalImg.src = currentModalGroup[currentModalIndex].src;
-  }
-
-  // Bind certificate triggers scoped strictly within their respective provider block (.cert-provider)
-  certImages.forEach((img) => {
-    img.addEventListener('click', () => {
-      const providerContainer = img.closest('.cert-provider') || img.closest('.section') || document;
-      const group = Array.from(providerContainer.querySelectorAll('.cert-modal-trigger'));
-      const index = group.indexOf(img);
-      openModalWithGroup(group, index >= 0 ? index : 0);
+  triggers.forEach((trigger, idx) => {
+    trigger.addEventListener('click', () => {
+      currentImgIndex = idx;
+      openModalAtIndex(currentImgIndex);
     });
   });
 
-  if (modalNextBtn) modalNextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNextModalImage(); });
-  if (modalPrevBtn) modalPrevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevModalImage(); });
+  function openModalAtIndex(index) {
+    if (index >= 0 && index < triggers.length) {
+      modal.style.display = 'flex';
+      modalImg.src = triggers[index].src;
+    }
+  }
 
   if (closeModal) {
     closeModal.addEventListener('click', () => {
@@ -362,153 +317,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Cisco Certificate Sliding / Toggling
-  const ciscoCertImg = document.getElementById('ciscoCertImg');
-  if (ciscoCertImg) {
-    const ciscoCerts = [
-      "Certificates/Cisco_Introduction_to_Cybersecurity_certificate.jpg",
-      "Certificates/Cisco_Certificate_of_Course_Completion.jpg"
-    ];
-    let ciscoIndex = 0;
-
-    setInterval(() => {
-      ciscoIndex = (ciscoIndex + 1) % ciscoCerts.length;
-      ciscoCertImg.src = ciscoCerts[ciscoIndex];
-    }, 2500);
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (triggers.length === 0) return;
+      currentImgIndex = (currentImgIndex - 1 + triggers.length) % triggers.length;
+      openModalAtIndex(currentImgIndex);
+    });
   }
 
-  // Mobile Touch Swipe Navigation for Lightbox Modal
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  if (modal) {
-    modal.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    modal.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const swipeThreshold = 40;
-      if (touchEndX < touchStartX - swipeThreshold) {
-        showNextModalImage();
-      } else if (touchEndX > touchStartX + swipeThreshold) {
-        showPrevModalImage();
-      }
-    }, { passive: true });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (triggers.length === 0) return;
+      currentImgIndex = (currentImgIndex + 1) % triggers.length;
+      openModalAtIndex(currentImgIndex);
+    });
   }
 
-  // Keyboard navigation for modal
   document.addEventListener('keydown', (e) => {
     if (modal && modal.style.display === 'flex') {
-      if (e.key === 'ArrowRight') showNextModalImage();
-      if (e.key === 'ArrowLeft') showPrevModalImage();
-      if (e.key === 'Escape') modal.style.display = 'none';
+      if (e.key === 'Escape') {
+        modal.style.display = 'none';
+      } else if (e.key === 'ArrowLeft') {
+        if (triggers.length === 0) return;
+        currentImgIndex = (currentImgIndex - 1 + triggers.length) % triggers.length;
+        openModalAtIndex(currentImgIndex);
+      } else if (e.key === 'ArrowRight') {
+        if (triggers.length === 0) return;
+        currentImgIndex = (currentImgIndex + 1) % triggers.length;
+        openModalAtIndex(currentImgIndex);
+      }
     }
   });
 
-  // 5. Contact Form Submission (Formspree Integration)
-  const contactForm = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
+  // Filter functionality for Certificates and Badges
+  const filterButtons = document.querySelectorAll('.filter-btn');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSectionId = button.getAttribute('data-target');
+      const filterValue = button.getAttribute('data-filter');
 
-      const formData = new FormData(contactForm);
+      // Update active state for buttons within the same section
+      const sectionButtons = document.querySelectorAll(`.filter-btn[data-target="${targetSectionId}"]`);
+      sectionButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
 
-      try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
+      // Filter providers in target section
+      const targetSection = document.getElementById(targetSectionId);
+      if (targetSection) {
+        const providers = targetSection.querySelectorAll('.cert-provider');
+        providers.forEach(provider => {
+          const org = provider.getAttribute('data-org');
+          if (filterValue === 'all' || org === filterValue) {
+            provider.classList.remove('hide');
+          } else {
+            provider.classList.add('hide');
           }
         });
-
-        if (response.ok) {
-          alert('Thank you! Your message has been sent successfully.');
-          contactForm.reset();
-        } else {
-          alert('Oops! There was a problem submitting your form. Please try again.');
-        }
-      } catch (error) {
-        alert('Oops! There was a network error sending your message.');
-      } finally {
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
       }
     });
-  }
+  });
 
-  // 6. Interactive 3D Snapshot Carousels (Clickable Snapshots + Dynamic Timer Switching)
-  function setupSnapshotCarousel(carouselId) {
-    const carouselContainer = document.getElementById(carouselId);
-    if (!carouselContainer) return;
+  // Snapshot Carousels setup for Projects
+  function initCarousel(carouselId) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
 
-    const images = Array.from(carouselContainer.querySelectorAll('.snapshot-img'));
+    const images = Array.from(container.querySelectorAll('.snapshot-img'));
     if (images.length === 0) return;
 
     let currentIndex = 0;
-    let timerId = null;
 
-    function updateCarousel() {
-      const total = images.length;
-
-      images.forEach((img, index) => {
+    function updatePositions() {
+      images.forEach((img, idx) => {
         img.classList.remove('active', 'prev', 'next');
-        img.style.pointerEvents = 'none';
 
-        const prevIndex = (currentIndex - 1 + total) % total;
-        const nextIndex = (currentIndex + 1) % total;
-
-        if (index === currentIndex) {
+        if (idx === currentIndex) {
           img.classList.add('active');
-          img.style.pointerEvents = 'auto';
-        } else if (index === prevIndex) {
+        } else if (idx === (currentIndex - 1 + images.length) % images.length) {
           img.classList.add('prev');
-          img.style.pointerEvents = 'auto';
-        } else if (index === nextIndex) {
+        } else if (idx === (currentIndex + 1) % images.length) {
           img.classList.add('next');
-          img.style.pointerEvents = 'auto';
         }
       });
     }
 
-    function scheduleNextSlide(delayMs) {
-      if (timerId) clearTimeout(timerId);
-      timerId = setTimeout(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-        scheduleNextSlide(2500); // Resume 2.5 second automatic loop
-      }, delayMs);
-    }
+    updatePositions();
 
-    images.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        const total = images.length;
-        const prevIndex = (currentIndex - 1 + total) % total;
-        const nextIndex = (currentIndex + 1) % total;
-
-        if (index === currentIndex) {
-          // Open active snapshot in full modal with its group
-          openModalWithGroup(images, index);
-        } else if (index === nextIndex || index === prevIndex) {
-          // Switch immediately to clicked next/prev snapshot (loops seamlessly)
-          currentIndex = index;
-          updateCarousel();
-          scheduleNextSlide(9500); // Hold manual selection for 9.5 seconds
-        }
-      });
-    });
-
-    updateCarousel();
-    scheduleNextSlide(2500); // Initial 2.5 second start loop
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updatePositions();
+    }, 3500);
   }
 
-  setupSnapshotCarousel('shoaibCarousel');
-  setupSnapshotCarousel('zubairCarousel');
+  initCarousel('shoaibCarousel');
+  initCarousel('zubairCarousel');
 });
