@@ -21,9 +21,9 @@
   --border-color: rgba(0, 51, 102, 0.1);
   --text-main: #0a1828;
   --text-muted: #3a506b;
-  --accent-green: #0077b6;
+  --accent-green: #311ce6;
   --glow-shadow: 0 0 15px rgba(0, 119, 182, 0.4);
-  --particle-color: #0077b6;
+  --particle-color: #311ce6;
 }
 
 * {
