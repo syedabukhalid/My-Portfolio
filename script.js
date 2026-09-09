@@ -279,27 +279,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Modal / Lightbox functionality for Certificates & Badges
+  // Active Navigation Link Highlight on Scroll (only the visible section is green)
+  const sections = document.querySelectorAll('section.section');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  function updateActiveNav() {
+    let current = '';
+    const scrollPos = window.scrollY + 120; // offset for fixed header
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    // At the very top, force Home as active
+    if (window.scrollY < 100) {
+      current = 'home';
+    }
+
+    navItems.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav(); // set correct state on load
+
+  // Modal / Lightbox functionality for Certificates, Badges & Project Snapshots
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('imgFull');
   const closeModal = document.querySelector('.modal-close');
   const prevBtn = document.getElementById('modalPrevBtn');
   const nextBtn = document.getElementById('modalNextBtn');
 
-  const triggers = Array.from(document.querySelectorAll('.cert-modal-trigger'));
+  // Shared state so both certs and project snapshots can use the same modal + arrows
+  let currentTriggers = [];
   let currentImgIndex = -1;
 
-  triggers.forEach((trigger, idx) => {
+  // Certificates & Badges triggers
+  const certTriggers = Array.from(document.querySelectorAll('.cert-modal-trigger'));
+  certTriggers.forEach((trigger, idx) => {
     trigger.addEventListener('click', () => {
+      currentTriggers = certTriggers;
       currentImgIndex = idx;
       openModalAtIndex(currentImgIndex);
     });
   });
 
   function openModalAtIndex(index) {
-    if (index >= 0 && index < triggers.length) {
+    if (index >= 0 && index < currentTriggers.length) {
       modal.style.display = 'flex';
-      modalImg.src = triggers[index].src;
+      modalImg.src = currentTriggers[index].src;
     }
   }
 
@@ -320,8 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (triggers.length === 0) return;
-      currentImgIndex = (currentImgIndex - 1 + triggers.length) % triggers.length;
+      if (currentTriggers.length === 0) return;
+      currentImgIndex = (currentImgIndex - 1 + currentTriggers.length) % currentTriggers.length;
       openModalAtIndex(currentImgIndex);
     });
   }
@@ -329,8 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (triggers.length === 0) return;
-      currentImgIndex = (currentImgIndex + 1) % triggers.length;
+      if (currentTriggers.length === 0) return;
+      currentImgIndex = (currentImgIndex + 1) % currentTriggers.length;
       openModalAtIndex(currentImgIndex);
     });
   }
@@ -340,12 +376,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') {
         modal.style.display = 'none';
       } else if (e.key === 'ArrowLeft') {
-        if (triggers.length === 0) return;
-        currentImgIndex = (currentImgIndex - 1 + triggers.length) % triggers.length;
+        if (currentTriggers.length === 0) return;
+        currentImgIndex = (currentImgIndex - 1 + currentTriggers.length) % currentTriggers.length;
         openModalAtIndex(currentImgIndex);
       } else if (e.key === 'ArrowRight') {
-        if (triggers.length === 0) return;
-        currentImgIndex = (currentImgIndex + 1) % triggers.length;
+        if (currentTriggers.length === 0) return;
+        currentImgIndex = (currentImgIndex + 1) % currentTriggers.length;
         openModalAtIndex(currentImgIndex);
       }
     }
@@ -380,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Snapshot Carousels setup for Projects
+  // Snapshot Carousels setup for Projects (auto-rotate + click opens same lightbox as badges)
   function initCarousel(carouselId) {
     const container = document.getElementById(carouselId);
     if (!container) return;
@@ -410,6 +446,16 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = (currentIndex + 1) % images.length;
       updatePositions();
     }, 3500);
+
+    // Click any snapshot → open the shared modal and allow prev/next only within this project
+    images.forEach((img, idx) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        currentTriggers = images;
+        currentImgIndex = idx;
+        openModalAtIndex(currentImgIndex);
+      });
+    });
   }
 
   initCarousel('shoaibCarousel');
