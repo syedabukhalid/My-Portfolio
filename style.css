@@ -697,7 +697,9 @@ header {
   padding: 0.4rem 0.8rem;
 }
 
-/* Experience Section Layout */
+/* ==========================================
+   Experience Section Layout
+========================================== */
 .experience-container {
   display: flex;
   gap: 3rem;
@@ -718,10 +720,7 @@ header {
   width: 100%;
 }
 
-.experience-layout-row.left-box {
-  flex-direction: row;
-}
-
+.experience-layout-row.left-box,
 .experience-layout-row.right-box {
   flex-direction: row;
 }
@@ -772,7 +771,9 @@ header {
   justify-content: center;
 }
 
-/* Projects Section & Snapshot Carousel Styles */
+/* ==========================================
+   Projects Section & Snapshot Carousel Styles
+========================================== */
 .projects-container {
   display: flex;
   gap: 3rem;
@@ -847,10 +848,7 @@ header {
   width: 100%;
 }
 
-.project-layout-row.left-box {
-  flex-direction: row;
-}
-
+.project-layout-row.left-box,
 .project-layout-row.right-box {
   flex-direction: row;
 }
@@ -901,36 +899,63 @@ header {
   border-color: var(--accent-green);
 }
 
-/* Left Peek Snapshot (Shows ~10.37% visible) */
+/* Left Peek Snapshot */
 .snapshot-img.prev {
   opacity: 0.7;
   transform: translateX(-79.26%) scale(0.88);
   z-index: 2;
 }
 
-/* Right Peek Snapshot (Shows ~10.37% visible) */
+/* Right Peek Snapshot */
 .snapshot-img.next {
   opacity: 0.7;
   transform: translateX(79.26%) scale(0.88);
   z-index: 2;
 }
 
-/* Mobile Responsiveness (Ensures Text Cards are ALWAYS on top, Snapshots ALWAYS on bottom) */
+/* ==========================================
+   Mobile Responsiveness (Screens <= 768px)
+========================================== */
 @media (max-width: 768px) {
   .experience-layout-row,
   .project-layout-row {
-    flex-direction: column;
+    flex-direction: column !important;
+    gap: 1.5rem;
   }
 
-  /* Reverses layout for right-box items so text comes first and carousel stays below */
-  .experience-layout-row.right-box,
-  .project-layout-row.right-box {
-    flex-direction: column-reverse;
-  }
-
-  .testimonial-carousel,
-  .snapshot-carousel {
+  /* Text card always renders top */
+  .experience-layout-row .exp-card,
+  .project-layout-row .project-card {
+    order: 1;
     width: 100%;
+  }
+
+  /* Snapshot carousel container always renders under text */
+  .experience-layout-row .testimonial-carousel,
+  .project-layout-row .snapshot-carousel {
+    order: 2;
+    width: 100%;
+    height: 200px; /* Reduced container height for mobile aspect ratio */
+    overflow: hidden;
+  }
+
+  /* Adjust image dimensions so full screenshots fit inside small viewports */
+  .snapshot-img {
+    max-width: 70%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  /* Tighter transform offsets so side peeks stay visible inside mobile screen boundaries */
+  .snapshot-img.prev {
+    opacity: 0.5;
+    transform: translateX(-55%) scale(0.8);
+  }
+
+  .snapshot-img.next {
+    opacity: 0.5;
+    transform: translateX(55%) scale(0.8);
   }
 }
 
