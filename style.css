@@ -718,6 +718,14 @@ header {
   width: 100%;
 }
 
+.experience-layout-row.left-box {
+  flex-direction: row;
+}
+
+.experience-layout-row.right-box {
+  flex-direction: row;
+}
+
 .exp-card {
   background-color: var(--bg-secondary);
   padding: 1.5rem;
@@ -768,6 +776,11 @@ header {
 @media (max-width: 768px) {
   .experience-layout-row {
     flex-direction: column;
+  }
+  
+/* Keeps the text card on top and carousel below on mobile screens */
+  .experience-layout-row.right-box {
+    flex-direction: column-reverse;
   }
   
   .testimonial-carousel {
