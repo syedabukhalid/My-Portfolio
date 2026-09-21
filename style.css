@@ -772,22 +772,6 @@ header {
   justify-content: center;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .experience-layout-row {
-    flex-direction: column;
-  }
-  
-/* Keeps the text card on top and carousel below on mobile screens */
-  .experience-layout-row.right-box {
-    flex-direction: column-reverse;
-  }
-  
-  .testimonial-carousel {
-    width: 100%;
-  }
-}
-
 /* Projects Section & Snapshot Carousel Styles */
 .projects-container {
   display: flex;
@@ -929,6 +913,25 @@ header {
   opacity: 0.7;
   transform: translateX(79.26%) scale(0.88);
   z-index: 2;
+}
+
+/* Mobile Responsiveness (Ensures Text Cards are ALWAYS on top, Snapshots ALWAYS on bottom) */
+@media (max-width: 768px) {
+  .experience-layout-row,
+  .project-layout-row {
+    flex-direction: column;
+  }
+
+  /* Reverses layout for right-box items so text comes first and carousel stays below */
+  .experience-layout-row.right-box,
+  .project-layout-row.right-box {
+    flex-direction: column-reverse;
+  }
+
+  .testimonial-carousel,
+  .snapshot-carousel {
+    width: 100%;
+  }
 }
 
 /* Contact Section */
