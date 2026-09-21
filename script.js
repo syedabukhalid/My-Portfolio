@@ -460,4 +460,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initCarousel('shoaibCarousel');
   initCarousel('zubairCarousel');
+
+  // Initialize Experience Testimonial Carousels
+initCarousel('csTestimonialsCarousel');
+initCarousel('physicsTestimonialsCarousel');
 });
