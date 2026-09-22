@@ -168,8 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
 VERSION:3.0
 FN:Muhammad Shoaib
 TITLE:iBwave Certified Technical Project Manager & Transmission Expert
-TEL;TYPE=CELL:+966599016026
-EMAIL:engr.shoaib79@gmail.com
+TEL;TYPE=CELL:+966xxxxxxxxx
+EMAIL:xxxxxxxxxxxxx@gmail.com
 ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
 END:VCARD`;
 
