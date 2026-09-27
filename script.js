@@ -525,7 +525,7 @@ Full Name: Muhammad Affan Bukhari
 Nick Name: Syed Abu Khalid
 Status: Active Student
 TEL;TYPE=CELL:+966 56 796 7138
-EMAIL:xxxxxxxxxxxxx@gmail.com
+EMAIL:syedabukhalid.pro@gmail.com
 ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
 END:VCARD`;
 
