@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     vcardBtn.addEventListener('click', () => {
         const vCardData = `BEGIN:VCARD
-VERSION:3.0
+VERSION:2.3
 FULL NAME: Muhammad Affan Bukhari
 NICK NAME: Syed Abu Khalid
 STATUS: Active Student
