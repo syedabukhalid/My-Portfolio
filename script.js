@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel('csTestimonialsCarousel');
   initCarousel('physicsTestimonialsCarousel');
 
-      // --- 6. DYNAMIC vCARD GENERATION (.txt output format) ---
+      // --- DYNAMIC vCARD GENERATION (.txt output format) ---
     const vcardBtn = document.getElementById('download-vcard');
 
     vcardBtn.addEventListener('click', () => {
