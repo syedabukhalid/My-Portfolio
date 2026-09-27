@@ -872,6 +872,13 @@ header {
   display: flex;
 }
 
+/* Light mode overlay adjustment */
+body.light-mode .modal-overlay,
+body.light .modal-overlay,
+[data-theme="light"] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 /* Container for Iframe */
 .modal-container {
   position: relative;
@@ -885,14 +892,14 @@ header {
   flex-direction: column;
 }
 
-/* Chrome Browser Tab Bar Styling */
+/* Chrome Browser Tab Bar Styling - Dark Mode Default */
 .chrome-tab-bar {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   background-color: #1f1f1f;
-  height: 42px;
-  padding: 0 10px;
+  height: 40px;
+  padding: 0 8px;
   user-select: none;
   border-bottom: 1px solid #3c4043;
 }
@@ -912,7 +919,7 @@ header {
   color: #e8eaed;
   padding: 0 16px;
   height: 34px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   max-width: 240px;
@@ -932,26 +939,54 @@ header {
   white-space: nowrap;
 }
 
-/* Close Button (Upper Right Corner) */
+/* Square Close Button (Chrome Tab Style) */
 .modal-close-btn {
   background: transparent;
   color: #9aa0a6;
   border: none;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: normal;
   cursor: pointer;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 4px; /* Square shape */
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .modal-close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #e81123; /* Classic Chrome red close hover */
+  color: #ffffff;
+}
+
+/* Chrome Browser Tab Bar Styling - Light Mode Adaptations */
+body.light-mode .chrome-tab-bar,
+body.light .chrome-tab-bar,
+[data-theme="light"] .chrome-tab-bar {
+  background-color: #dee1e6;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+body.light-mode .chrome-tab,
+body.light .chrome-tab,
+[data-theme="light"] .chrome-tab {
+  background-color: #ffffff;
+  color: #3c4043;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .modal-close-btn,
+body.light .modal-close-btn,
+[data-theme="light"] .modal-close-btn {
+  color: #5f6368;
+}
+
+body.light-mode .modal-close-btn:hover,
+body.light .modal-close-btn:hover,
+[data-theme="light"] .modal-close-btn:hover {
+  background-color: #e81123;
   color: #ffffff;
 }
 

@@ -331,6 +331,14 @@ const closeProjectModalBtn = document.getElementById('closeModalBtn');
 const openModalButtons = document.querySelectorAll('.open-modal-btn');
 const chromeTabTitle = document.getElementById('chromeTabTitle');
 
+// Helper function to check if current parent site is in light mode
+const isParentInLightMode = () => {
+  return document.body.classList.contains('light-mode') || 
+         document.body.classList.contains('light') || 
+         document.documentElement.getAttribute('data-theme') === 'light' ||
+         document.body.getAttribute('data-theme') === 'light';
+};
+
 // Open Modal
 openModalButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -347,6 +355,27 @@ openModalButtons.forEach(btn => {
     }
   });
 });
+
+// Pass light/dark mode theme state into the iframe content once loaded
+if (projectIframe) {
+  projectIframe.addEventListener('load', () => {
+    try {
+      const iframeDoc = projectIframe.contentDocument || projectIframe.contentWindow.document;
+      if (iframeDoc && iframeDoc.body) {
+        if (isParentInLightMode()) {
+          iframeDoc.body.classList.add('light-mode', 'light');
+          iframeDoc.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          iframeDoc.body.classList.remove('light-mode', 'light');
+          iframeDoc.documentElement.setAttribute('data-theme', 'dark');
+        }
+      }
+    } catch (e) {
+      // Cross-origin restriction fallback silently handled if applicable
+      console.log('Iframe theme synchronization:', e);
+    }
+  });
+}
 
 // Function to Close Modal
 const closeProjectModal = () => {
