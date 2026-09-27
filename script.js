@@ -526,7 +526,7 @@ Nick Name: Syed Abu Khalid
 Status: Active Student
 TEL:+966 56 796 7138
 EMAIL:syedabukhalid.pro@gmail.com
-ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
+ADR: Riyadh ;Saudi Arabia
 END:VCARD`;
 
         const blob = new Blob([vCardData], { type: 'text/plain;charset=utf-8;' });
