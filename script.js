@@ -322,55 +322,61 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentTriggers = [];
   let currentImgIndex = -1;
 
-  // ==========================================
-  // POPUP MODAL CODE (UNIQUE VARIABLE NAMES)
-  // ==========================================
-  const projectModalElement = document.getElementById('projectModal');
-  const projectIframe = document.getElementById('projectIframe');
-  const closeProjectModalBtn = document.getElementById('closeModalBtn');
-  const openModalButtons = document.querySelectorAll('.open-modal-btn');
+ // ==========================================
+// POPUP MODAL CODE (UNIQUE VARIABLE NAMES)
+// ==========================================
+const projectModalElement = document.getElementById('projectModal');
+const projectIframe = document.getElementById('projectIframe');
+const closeProjectModalBtn = document.getElementById('closeModalBtn');
+const openModalButtons = document.querySelectorAll('.open-modal-btn');
+const chromeTabTitle = document.getElementById('chromeTabTitle');
 
-  // Open Modal
-  openModalButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const projectSrc = btn.getAttribute('data-src');
-      if (projectSrc) {
-        projectIframe.src = projectSrc;
-        projectModalElement.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+// Open Modal
+openModalButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const projectSrc = btn.getAttribute('data-src');
+    const projectTitle = btn.getAttribute('data-title') || 'Project View';
+    
+    if (projectSrc) {
+      projectIframe.src = projectSrc;
+      if (chromeTabTitle) {
+        chromeTabTitle.textContent = projectTitle;
       }
-    });
-  });
-
-  // Function to Close Modal
-  const closeProjectModal = () => {
-    if (projectModalElement) {
-      projectModalElement.classList.remove('active');
-      projectIframe.src = ''; // Stop running scripts inside iframe when closed
-      document.body.style.overflow = ''; // Restore background scrolling
+      projectModalElement.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
-  };
+  });
+});
 
-  // Close via button click
-  if (closeProjectModalBtn) {
-    closeProjectModalBtn.addEventListener('click', closeProjectModal);
-  }
-
-  // Close when clicking outside the container overlay
+// Function to Close Modal
+const closeProjectModal = () => {
   if (projectModalElement) {
-    projectModalElement.addEventListener('click', (e) => {
-      if (e.target === projectModalElement) {
-        closeProjectModal();
-      }
-    });
+    projectModalElement.classList.remove('active');
+    projectIframe.src = ''; // Stop running scripts inside iframe when closed
+    document.body.style.overflow = ''; // Restore background scrolling
   }
+};
 
-  // Close using ESC key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && projectModalElement && projectModalElement.classList.contains('active')) {
+// Close via button click
+if (closeProjectModalBtn) {
+  closeProjectModalBtn.addEventListener('click', closeProjectModal);
+}
+
+// Close when clicking outside the container overlay
+if (projectModalElement) {
+  projectModalElement.addEventListener('click', (e) => {
+    if (e.target === projectModalElement) {
       closeProjectModal();
     }
   });
+}
+
+// Close using ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && projectModalElement && projectModalElement.classList.contains('active')) {
+    closeProjectModal();
+  }
+});
 
   // Certificates & Badges triggers
   const certTriggers = Array.from(document.querySelectorAll('.cert-modal-trigger'));
