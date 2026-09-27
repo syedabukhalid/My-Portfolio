@@ -514,4 +514,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Experience Testimonial Carousels
   initCarousel('csTestimonialsCarousel');
   initCarousel('physicsTestimonialsCarousel');
+
+      // --- 6. DYNAMIC vCARD GENERATION (.txt output format) ---
+    const vcardBtn = document.getElementById('download-vcard');
+
+    vcardBtn.addEventListener('click', () => {
+        const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Muhammad Shoaib
+TITLE:iBwave Certified Technical Project Manager & Transmission Expert
+TEL;TYPE=CELL:+966xxxxxxxxx
+EMAIL:xxxxxxxxxxxxx@gmail.com
+ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
+END:VCARD`;
+
+        const blob = new Blob([vCardData], { type: 'text/plain;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'Muhammad_Shoaib_VCard.txt');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
 });
