@@ -521,9 +521,9 @@ document.addEventListener('DOMContentLoaded', () => {
     vcardBtn.addEventListener('click', () => {
         const vCardData = `BEGIN:VCARD
 VERSION:3.0
-Full Name: Muhammad Affan Bukhari
-Nick Name: Syed Abu Khalid
-Status: Active Student
+FULL NAME: Muhammad Affan Bukhari
+NICK NAME: Syed Abu Khalid
+STATUS: Active Student
 TEL:+966 56 796 7138
 EMAIL:syedabukhalid.pro@gmail.com
 ADR: Riyadh ;Saudi Arabia
