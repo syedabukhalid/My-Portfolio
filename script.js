@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const vCardData = `BEGIN:VCARD
 VERSION:3.0
 Full Name: Muhammad Affan Bukhari
-Nick Name: Syed Abu
+Nick Name: Syed Abu Khalid
 TITLE:iBwave Certified Technical Project Manager & Transmission Expert
 TEL;TYPE=CELL:+966xxxxxxxxx
 EMAIL:xxxxxxxxxxxxx@gmail.com
