@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
 VERSION:3.0
 Full Name: Muhammad Affan Bukhari
 Nick Name: Syed Abu Khalid
-TITLE: Active Student
+Status: Active Student
 TEL;TYPE=CELL:+966xxxxxxxxx
 EMAIL:xxxxxxxxxxxxx@gmail.com
 ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
