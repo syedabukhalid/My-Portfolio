@@ -521,7 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
     vcardBtn.addEventListener('click', () => {
         const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Muhammad Shoaib
+FN:Muhammad Affan
 TITLE:iBwave Certified Technical Project Manager & Transmission Expert
 TEL;TYPE=CELL:+966xxxxxxxxx
 EMAIL:xxxxxxxxxxxxx@gmail.com
