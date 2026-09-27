@@ -890,7 +890,7 @@ header {
   left: 15px;
   width: 40px;
   height: 40px;
-  background-color: #ff4d4d;
+  background-color: #00ff87;
   color: #ffffff;
   border: none;
   border-radius: 50%;
@@ -906,7 +906,7 @@ header {
 }
 
 .modal-close-btn:hover {
-  background-color: #e60000;
+  background-color: #02a75a;
   transform: scale(1.1);
 }
 
