@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCarousel('csTestimonialsCarousel');
   initCarousel('physicsTestimonialsCarousel');
 
-      // --- DYNAMIC vCARD GENERATION (.txt output format) ---
+      // --- DYNAMIC vCARD (.txt output format) ---
     const vcardBtn = document.getElementById('download-vcard');
 
     vcardBtn.addEventListener('click', () => {
@@ -524,7 +524,7 @@ VERSION:3.0
 Full Name: Muhammad Affan Bukhari
 Nick Name: Syed Abu Khalid
 Status: Active Student
-TEL;TYPE=CELL:+966 56 796 7138
+TEL:+966 56 796 7138
 EMAIL:syedabukhalid.pro@gmail.com
 ADR;TYPE=WORK:;;Riyadh;Saudi Arabia
 END:VCARD`;
