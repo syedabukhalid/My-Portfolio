@@ -520,14 +520,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     vcardBtn.addEventListener('click', () => {
         const vCardData = `BEGIN:VCARD
-VERSION:2.3
+VERSION: 2.3
 FULL NAME: Muhammad Affan Bukhari
 NICK NAME: Syed Abu Khalid
 STATUS: Active Student
-TEL:+966 56 796 7138
-EMAIL:syedabukhalid.pro@gmail.com
+TEL: +966 56 796 7138
+EMAIL: syedabukhalid.pro@gmail.com
 ADR: Riyadh ;Saudi Arabia
-END:VCARD`;
+END: VCARD`;
 
         const blob = new Blob([vCardData], { type: 'text/plain;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
