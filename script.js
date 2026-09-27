@@ -533,7 +533,7 @@ END: VCARD`;
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'Muhammad_Affan_VCard.txt');
+        link.setAttribute('download', 'Syed_Abu_Khalid_VCard.txt');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
